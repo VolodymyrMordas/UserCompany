@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#026d9e</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF80AB</color>
+
+    <color name="app_base_text_color">#ffffff</color>
+    <color name="app_base_button_color">#203f7e</color>
+    <color name="app_base_button_icon_color">#193264</color>
+
+    <color name="app_button_google_color">#c63800</color>
+    <color name="app_button_google_icon_color">#a93000</color>
+
+    <color name="app_button_twitter_color">#0087c6</color>
+    <color name="app_button_twitter_icon_color">#026ea0</color>
+
+    <color name="app_button_email_color">#fac408</color>
+    <color name="app_button_email_icon_color">#f8b10e</color>
+
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+</resources>

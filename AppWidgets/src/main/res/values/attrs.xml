@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AppButton">
+        <attr name="btn_icon_src" format="integer"/>
+        <attr name="btn_icon_wrp_color" format="color"/>
+        <attr name="btn_txt_wrp_color" format="color"/>
+        <attr name="btn_txt" format="string"/>
+    </declare-styleable>
+</resources>

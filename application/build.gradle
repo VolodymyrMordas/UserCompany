@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.usercompany"
+        minSdkVersion 9
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        def BRING_API_URL = "API_URL"
+        def CRASH_REPORT = "CRASH_REPORT"
+        def STRING = "String"
+        def BOOLEAN = "boolean"
+
+        release {
+            buildConfigField STRING, BRING_API_URL, "\"http://176.36.109.163/ClubCard/api/v1\""
+            buildConfigField BOOLEAN, CRASH_REPORT, "false"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //zipAlignEnabled false
+        }
+
+        debug {
+            buildConfigField STRING, BRING_API_URL, "\"http://176.36.109.163/ClubCard/api/v1\""
+            buildConfigField BOOLEAN, CRASH_REPORT, "false"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.debug
+            //zipAlignEnabled false
+        }
+
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile project(':AppWidgets')
+    compile project(':AppLog')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.google.code.gson:gson:2.5'
+    compile 'com.facebook.android:facebook-android-sdk:4.1.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.octo.android.robospice:robospice:1.4.14'
+    compile 'com.octo.android.robospice:robospice-retrofit:1.4.14'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.android.support:design:23.4.0'
+    compile 'ch.acra:acra:4.7.0'
+}
