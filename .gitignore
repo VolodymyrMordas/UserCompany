@@ -1,8 +1,11 @@
 *.iml
 .gradle
 /local.properties
-/.idea/workspace.xml
-/.idea/libraries
+/.idea
 .DS_Store
 /build
 /captures
+AppLog/libs/
+AppLog/src/main/res/drawable/
+AppWidgets/libs/
+application/libs/

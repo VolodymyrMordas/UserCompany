@@ -3,11 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
-
     defaultConfig {
         applicationId "com.usercompany"
-        minSdkVersion 9
-        targetSdkVersion 23
+        minSdkVersion 10
+        targetSdkVersion 10
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -19,22 +18,24 @@ android {
         def BOOLEAN = "boolean"
 
         release {
-            buildConfigField STRING, BRING_API_URL, "\"http://176.36.109.163/ClubCard/api/v1\""
+            buildConfigField STRING, BRING_API_URL, "\"http://192.168.1.111:8080/ClubCard/api/v1\""
             buildConfigField BOOLEAN, CRASH_REPORT, "false"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            //zipAlignEnabled false
+            zipAlignEnabled false
         }
 
         debug {
-            buildConfigField STRING, BRING_API_URL, "\"http://176.36.109.163/ClubCard/api/v1\""
+            buildConfigField STRING, BRING_API_URL, "\"http://192.168.1.111:8080/ClubCard/api/v1\""
             buildConfigField BOOLEAN, CRASH_REPORT, "false"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             //signingConfig signingConfigs.debug
-            //zipAlignEnabled false
+            zipAlignEnabled false
         }
 
+    }
+    productFlavors {
     }
 }
 
@@ -52,4 +53,5 @@ dependencies {
     compile 'com.google.android.gms:play-services:8.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'ch.acra:acra:4.7.0'
+    compile 'com.android.support:multidex:1.0.1'
 }

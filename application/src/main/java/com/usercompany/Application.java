@@ -1,8 +1,10 @@
 package com.usercompany;
 
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.support.multidex.MultiDex;
 import android.util.Base64;
 
 import com.applog.LogUtils;
@@ -79,7 +81,7 @@ public class Application extends android.app.Application {
         FacebookSdk.sdkInitialize(getApplicationContext());
         try {
             PackageInfo info = getPackageManager().getPackageInfo(
-                    "net.mycar.location",
+                    "com.usercompany",
                     PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
                 MessageDigest md = MessageDigest.getInstance("SHA");
@@ -89,7 +91,7 @@ public class Application extends android.app.Application {
         } catch (PackageManager.NameNotFoundException e) {
             LogUtils.LOGI(TAG, "ERROR:" + e.getMessage());
         } catch (NoSuchAlgorithmException e) {
-            LogUtils.LOGI(TAG, "ERROR:" + e.getMessage());
+            e.printStackTrace();
         }
 
         initGson();
@@ -148,4 +150,10 @@ public class Application extends android.app.Application {
     synchronized public Gson getGson() {
         return mGson;
     }
+
+//    @Override
+//    protected void attachBaseContext(Context base) {
+//        super.attachBaseContext(base);
+//        MultiDex.install(base);
+//    }
 }
